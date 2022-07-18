@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="recruiter/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="wrapper">
+			<h4 class="text-uppercase text-center">Payment Details</h4>
+			<form class="form mt-4" id="cardform" novalidate
+				action="card_payment.jsp">
+
+				<div class="form-group">
+					<label for="card" class="text-uppercase">card number</label>
+					<div class="card-number">
+						<input type="text" class="card-no" name="cno"
+							placeholder="1234 4567 5869 1234"> <span class="">
+							<img
+							src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-marcus-samuelsson-group-2.png"
+							alt="" width="30" height="30">
+						</span>
+					</div>
+				</div>
+				<div class="d-flex w-100">
+					<div class="d-flex w-50 pr-sm-4">
+						<div class="form-group">
+							<label for="expiry" class="text-uppercase">exp.date</label> <input
+								name="dt" type="text" class="form-control" placeholder="03/2020">
+						</div>
+					</div>
+					<div class="d-flex w-50 pl-sm-5 pl-3">
+						<div class="form-group">
+							<label for="cvv">CVV</label> <a href="#"
+								title="CVV is a credit or debit card number, the last three digit number printed on the signature panel">what's
+								this</a> <input name="cvv" type="password" class="form-control pr-5">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="name" class="text-uppercase">name on the card</label> <input
+						name="cname" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="name" class="text-uppercase">Total Amount</label> <input
+						name="" type="text" class="form-control" value="<%=amount%>"
+						readonly>
+				</div>
+
+				<div class="my-3">
+					<input type="submit" value="Pay Now"
+						class="text-uppercase btn btn-primary btn-block p-3">
+				</div>
+
+
+
+
+				<input type="hidden" value="500" name="amount"> <input
+					type="hidden" th:value="${user.id}" name="userid">
+
+			</form>
+		</div>
+
+	</section>
+</body>
+</html>
