@@ -4,7 +4,7 @@ services:
     build: .
     restart: always
     ports:
-      - 8085:8085
+      - 8080:8080
     depends_on:
       - postgres_db
     links:
@@ -15,5 +15,5 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: jobportaldb
+      POSTGRES_DB: Job
       POSTGRES_PASSWORD: postgres
