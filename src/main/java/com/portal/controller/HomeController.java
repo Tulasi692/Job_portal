@@ -31,7 +31,7 @@ public class HomeController {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncode;
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String home() {
 		return "index";
 	}
